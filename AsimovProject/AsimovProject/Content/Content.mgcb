@@ -25,12 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:Assets/crosshairs.png
 
-#begin Assets/galleryFont.spritefont
+#begin Assets/gameFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:Assets/galleryFont.spritefont
+/build:Assets/gameFont.spritefont
 
 #begin Assets/sky.png
 /importer:TextureImporter

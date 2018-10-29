@@ -13,6 +13,7 @@ namespace AsimovProject
         public static int gameHeight = 720;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GameManager gameManager = new GameManager();
 
 
         public Game1()
@@ -37,6 +38,8 @@ namespace AsimovProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             GameServices.AddService<SpriteBatch>(spriteBatch);
             GameServices.AddService<ContentManager>(Content);
+
+            gameManager.Load();
         }
 
         protected override void UnloadContent()
@@ -60,6 +63,8 @@ namespace AsimovProject
             GraphicsDevice.Clear(Color.ForestGreen);
 
             spriteBatch.Begin();
+
+            gameManager.Draw();
 
             spriteBatch.End();
 
