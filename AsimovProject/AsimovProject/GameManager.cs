@@ -13,11 +13,13 @@ namespace AsimovProject
     public class GameManager
     {
         SpriteFont gameFont;
-        List<StillSprite> backgrounds = new List<StillSprite>();
-        List<StillSprite> sprites = new List<StillSprite>();
+        List<PathButton> buttons = new List<PathButton>(); //Make into a Dictionary
+        Dictionary<string, StillSprite> backgrounds = new Dictionary<string, StillSprite>(); //backgounds["blue"] = new StillSprite(...)
+        Dictionary<string, StillSprite> sprites = new Dictionary<string, StillSprite>();
         List<StillSprite> onscreen = new List<StillSprite>();
         Texture2D currentBackground;
         string currentText;
+
         EventNode mainMenu;
         EventNode currentNode;
 
@@ -28,29 +30,45 @@ namespace AsimovProject
         }
         public void Load()
         {
-            //Load Font
+            ///Loading///
+         
             gameFont = GameServices.Content.Load<SpriteFont>("Assets/gameFont");
-            //Load All Backgrounds
-            //Turn Backgrounds into StillSpite objects and place into backkgrounds List (List capacity is listName.Count)
-            //Load All Sprites
-            //Turn sprites into StillSpite objects and place into sprites List (List capacity is listName.Count)
+                //Load All Backgrounds
+                //Load All Sprites
+
+            ///Fill field lists///
+                //Turn Backgrounds into StillSpite objects and place into backkgrounds List (List capacity is listName.Count)
+                //Turn sprites into StillSpite objects and place into sprites List (List capacity is listName.Count)
         }
-        //Fills currentBackround, onscreen, and currentText, based on values in the current event Node
+
         public void Update()
         {
-            //Get Number of Buttons from currentEvent Node, Create Button Objects 
+            //if chosen path is null, currentNode is mainMenu
+
+            ////Input////
+                //Get Number of Buttons from currentEvent Node, Create Button Objects 
+                        //Use MouseState mState = Mouse.getState
+                        //Has X and Y fields and LeftButton field
+                        //Check for input with mState.LeftButton == ButtonState.Pressed
+                        //Make sure input is only registed once (Holding button down register as more than a single input)
+                //When input detected, check position of a buttons in list with position of mouse
+                //If mouse is within the area of the button when input is registered, record input. 
+                //Move to nextNode of detected input from currentEventNode
             
-            //Get backround from current event
-            //Take key values event tree 
-            //When sprite found in list with matching key, .Add() to onscreen list
-            //Get string from the current eventd       
+
+            ////Get Current Event Keys////
+                //Get backround from current event
+                //Take key values event tree 
+                //When sprite found in list with matching key, .Add() to onscreen list
+                //Get text string from the current event and set to text field.       
         }
         public void Draw()
         {
+
             //Draw Backround
             //GameServices.spriteBatch.Draw(currentBackground, new Vector2(3, 3), Color.White);
 
-            //Draw Sprites, Iterate though onscreen list (using listName.Count) and Draw 
+            //Draw Sprites with loop, Iterate though onscreen list (using listName.Count) and Draw 
 
 
             //Draw Font

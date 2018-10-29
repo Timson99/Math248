@@ -23,7 +23,7 @@ namespace AsimovProject
             this.backgroundKey = backgroundKey;
             this.spriteKeys = spriteKeys;
             this.text = text;
-            int numButtons = numPaths;
+            numButtons = numPaths;
             paths = new EventNode[numButtons];
         }
         public string getBackgroundKey()
@@ -41,6 +41,11 @@ namespace AsimovProject
         public EventNode[] getPaths()
         {
             return paths;
+        }
+        //Use in Path1.cs and Path2.cs to create trees
+        public void setPath(int pathNumber, EventNode eN)
+        {
+            paths[pathNumber] = eN;
         }
         public int getNumButtons()
         {

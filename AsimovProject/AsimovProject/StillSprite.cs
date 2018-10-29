@@ -17,13 +17,11 @@ namespace AsimovProject
     {
         private Texture2D sprite;
         private Vector2 position;
-        public string key;
 
-        public StillSprite(Texture2D sprite, Vector2 position, string key)
+        public StillSprite(Texture2D sprite, Vector2 position)
         {
             this.sprite = sprite;
             this.position = position;
-            this.key = key;
         }
         public void Draw()
         {
