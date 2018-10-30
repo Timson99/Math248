@@ -12,20 +12,21 @@ namespace AsimovProject
 {
     class Path2
     {
+        //List of all event nodes, labled by path choices. All must be listed up here.
         private EventNode entryNode;
-        private EventNode currentNode;
+        private EventNode A;
+        private EventNode B;
+        private EventNode AABC;
+        //etc.
         public Path2()
         {
-            //Create Event Nodes Starting from Entry Node and link path fields together
+            //Create Event Nodes Starting from Entry Node
+            //List path fields together to create a tree structure
+            // Ex AAB.setPath(0,AABA)   AAB.setPath(1,AABB)
         }
-
-        public EventNode getCurrentNode()
+        public EventNode getEntryNode()
         {
-            return currentNode;
-        }
-        public void nextNode(int path)
-        {
-            currentNode = currentNode.getPaths()[path];
+            return entryNode;
         }
     }
 }

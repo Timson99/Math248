@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AsimovProject
 {
+    //Done
     class EventNode
     {
         private string backgroundKey;
@@ -51,6 +52,7 @@ namespace AsimovProject
         {
             return numButtons;
         }
+        //Use in GameManager to Move through the Game
         public EventNode nextNode(int path)
         {
             return paths[path];

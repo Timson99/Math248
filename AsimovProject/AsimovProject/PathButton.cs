@@ -22,15 +22,16 @@ namespace AsimovProject
         public PathButton(int buttonNum)
         {
             this.buttonNum = buttonNum;
-            //Set 
+            //Fill thisbutton field
+            //Determine Position Internally or Externally?
         }
         public void Load()
         {
-            //Load in Game
+            //Load in Game Load method
         }
         public void Draw()
         {
-            //Call in GameManager
+            //Call in GameManager Draw method
         }
         public Vector2 getPosition()
         {

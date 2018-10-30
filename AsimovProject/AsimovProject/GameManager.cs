@@ -17,8 +17,8 @@ namespace AsimovProject
         private Dictionary<string, StillSprite> backgrounds = new Dictionary<string, StillSprite>(); //backgounds["blue"] = new StillSprite(...)
         private Dictionary<string, StillSprite> sprites = new Dictionary<string, StillSprite>();
         private List<StillSprite> onscreen = new List<StillSprite>();
-        private Texture2D currentBackground;
-        private string currentText;
+        private StillSprite currentBackground;
+        private string currentText = "";
 
         
         EventNode mainMenu;
@@ -35,49 +35,57 @@ namespace AsimovProject
         public void Load()
         {
             ///Loading///
-         
-            gameFont = GameServices.Content.Load<SpriteFont>("Assets/gameFont");
+   
+            //Load Font(s)
+            gameFont = GameServices.Content.Load<SpriteFont>("Assets/Fonts/gameFont");
+
             //Load All Backgrounds
+            backgrounds["sky"]  = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sky"), new Vector2(0,0));
+            backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
+            currentBackground = backgrounds["space"];
             //Load All Sprites
 
-            ///Fill field lists///
+            ///Fill field lists SET KEY VALUES///
             //Turn Backgrounds into StillSpite objects and place into backkgrounds Dictionary (Dictionary capacity is listName.Count)
+
+
+
             //Turn sprites into StillSpite objects and place into sprites Dictionary (Dictionary capacity is listName.Count)
         }
 
         public void Update()
         {
-            //if chosen path is null, currentNode is mainMenu
+            //if currentNode is null, currentNode is mainMenu
 
             ////Input////
-                //Get Number of Buttons from currentEvent Node, Create Button Objects 
+                //Get Number of Buttons from currentEvent EventNode, Create Button Objects 
                         //Use MouseState mState = Mouse.getState
                         //Has X and Y fields and LeftButton field
-                        //Check for input with mState.LeftButton == ButtonState.Pressed
+                        //Use X Y fields of mState and X Y fields of each button's getPosition()
+                        // to check if the mouse is hovering over the button
+                        //If it is Check for input with mState.LeftButton == ButtonState.Pressed
                         //Make sure input is only registed once (Holding button down register as more than a single input)
-                //When input detected, check position of a buttons in list with position of mouse
-                //If mouse is within the area of the button when input is registered, record input. 
-                //Call nextNode() from currentNode
+                //Call nextNode() from currentNode using buttonNum of the pressed button
                 //set currentNode equal to the new currentNode (returned by nextNode())
             
 
             ////Get Current Event Keys////
-                //Get backround from current event
-                //Take key values event tree 
-                //When sprite found in list with matching key, .Add() to onscreen list
+                //Get backround key from current event, use with backgrounds list to set currentBackground
+                //Get the list of sprite keys and iterate though it, 
+                //Put each sprite key into sprites dictionaty, .Add() the result to onscreen list
                 //Get text string from the current event and set to text field.       
         }
         public void Draw()
         {
 
             //Draw Backround
-            //GameServices.spriteBatch.Draw(currentBackground, new Vector2(3, 3), Color.White);
+            currentBackground.Draw();
 
-            //Draw Sprites with loop, Iterate though onscreen list (using listName.Count) and Draw 
+            //Draw Sprites with loop, Iterate though onscreen list (using listName.Count) and call .Draw from StillSprite
 
 
             //Draw Font
-            //GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
+            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
         }
     }
 }
