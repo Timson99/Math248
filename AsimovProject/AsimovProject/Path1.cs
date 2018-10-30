@@ -12,20 +12,10 @@ namespace AsimovProject
 {
     class Path1
     {
-        EventNode entryNode;
-        EventNode currentNode;
+        public EventNode entryNode;
         public Path1()
         {
             //Create Event Nodes Starting from Entry Node and link path fields together
-        }
-
-        public EventNode getCurrentNode()
-        {
-            return currentNode;
-        }
-        public void nextNode(int path)
-        {
-            currentNode = currentNode.getPaths()[path];
         }
     }
 }

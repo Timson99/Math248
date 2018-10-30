@@ -12,8 +12,8 @@ namespace AsimovProject
 {
     class Path2
     {
-        EventNode entryNode;
-        EventNode currentNode;
+        private EventNode entryNode;
+        private EventNode currentNode;
         public Path2()
         {
             //Create Event Nodes Starting from Entry Node and link path fields together

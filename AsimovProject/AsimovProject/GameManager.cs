@@ -12,33 +12,37 @@ namespace AsimovProject
 {
     public class GameManager
     {
-        SpriteFont gameFont;
-        List<PathButton> buttons = new List<PathButton>(); //Make into a Dictionary
-        Dictionary<string, StillSprite> backgrounds = new Dictionary<string, StillSprite>(); //backgounds["blue"] = new StillSprite(...)
-        Dictionary<string, StillSprite> sprites = new Dictionary<string, StillSprite>();
-        List<StillSprite> onscreen = new List<StillSprite>();
-        Texture2D currentBackground;
-        string currentText;
+        private SpriteFont gameFont;
+        private List<PathButton> buttons = new List<PathButton>(); //Make into a Dictionary
+        private Dictionary<string, StillSprite> backgrounds = new Dictionary<string, StillSprite>(); //backgounds["blue"] = new StillSprite(...)
+        private Dictionary<string, StillSprite> sprites = new Dictionary<string, StillSprite>();
+        private List<StillSprite> onscreen = new List<StillSprite>();
+        private Texture2D currentBackground;
+        private string currentText;
 
+        
         EventNode mainMenu;
-        EventNode currentNode;
+        EventNode currentNode; //Set equal to current node of chosen path
+        Path1 path1 = new Path1();
+        Path2 path2 = new Path2();
 
         public GameManager()
         {
-            //mainMenu = new EventNode();
+            mainMenu = new EventNode("", new List<string>(), "", 1);
             currentNode = mainMenu;
+            //mainMenu setPath to Path1 and Path2 entryNodes
         }
         public void Load()
         {
             ///Loading///
          
             gameFont = GameServices.Content.Load<SpriteFont>("Assets/gameFont");
-                //Load All Backgrounds
-                //Load All Sprites
+            //Load All Backgrounds
+            //Load All Sprites
 
             ///Fill field lists///
-                //Turn Backgrounds into StillSpite objects and place into backkgrounds List (List capacity is listName.Count)
-                //Turn sprites into StillSpite objects and place into sprites List (List capacity is listName.Count)
+            //Turn Backgrounds into StillSpite objects and place into backkgrounds Dictionary (Dictionary capacity is listName.Count)
+            //Turn sprites into StillSpite objects and place into sprites Dictionary (Dictionary capacity is listName.Count)
         }
 
         public void Update()
@@ -53,7 +57,8 @@ namespace AsimovProject
                         //Make sure input is only registed once (Holding button down register as more than a single input)
                 //When input detected, check position of a buttons in list with position of mouse
                 //If mouse is within the area of the button when input is registered, record input. 
-                //Move to nextNode of detected input from currentEventNode
+                //Call nextNode() from currentNode
+                //set currentNode equal to the new currentNode (returned by nextNode())
             
 
             ////Get Current Event Keys////
@@ -72,7 +77,7 @@ namespace AsimovProject
 
 
             //Draw Font
-            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
+            //GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
         }
     }
 }

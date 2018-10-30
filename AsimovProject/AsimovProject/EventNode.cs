@@ -12,11 +12,11 @@ namespace AsimovProject
 {
     class EventNode
     {
-        string backgroundKey;
-        List<string> spriteKeys;
-        string text;
-        int numButtons;
-        EventNode[] paths;
+        private string backgroundKey;
+        private List<string> spriteKeys;
+        private string text;
+        private int numButtons;
+        private EventNode[] paths;
 
         public EventNode(string backgroundKey, List<string> spriteKeys, string text, int numPaths)
         {
@@ -50,6 +50,10 @@ namespace AsimovProject
         public int getNumButtons()
         {
             return numButtons;
+        }
+        public EventNode nextNode(int path)
+        {
+            return paths[path];
         }
 
     }

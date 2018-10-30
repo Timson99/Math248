@@ -14,10 +14,10 @@ namespace AsimovProject
     //
     class PathButton
     {
-        Texture2D[] buttons;
-        Texture2D thisButton;
-        Vector2 position;
-        int buttonNum;
+        private Texture2D[] buttons;
+        private Texture2D thisButton;
+        private Vector2 position;
+        private int buttonNum;
 
         public PathButton(int buttonNum)
         {
@@ -27,10 +27,6 @@ namespace AsimovProject
         public void Load()
         {
             //Load in Game
-        }
-        public void Update()
-        {
-            //Empty?
         }
         public void Draw()
         {
