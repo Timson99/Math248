@@ -27,31 +27,38 @@ namespace AsimovProject
             numButtons = numPaths;
             paths = new EventNode[numButtons];
         }
+
         public string getBackgroundKey()
         {
             return backgroundKey;
         }
+
         public List<string> getSpriteKeyList()
         {
             return spriteKeys;
         }
+
         public string getText()
         {
             return text;
         }
+
         public EventNode[] getPaths()
         {
             return paths;
         }
+
         //Use in Path1.cs and Path2.cs to create trees
         public void setPath(int pathNumber, EventNode eN)
         {
             paths[pathNumber] = eN;
         }
+
         public int getNumButtons()
         {
             return numButtons;
         }
+
         //Use in GameManager to Move through the Game
         public EventNode nextNode(int path)
         {

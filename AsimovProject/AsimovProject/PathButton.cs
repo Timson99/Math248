@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Content;
 namespace AsimovProject
 {
     //Class that takes a button num and sets corresponding button in array to this button.
-    //
+    //Done besides loading
     class PathButton
     {
         private Texture2D[] buttons;
@@ -19,19 +19,21 @@ namespace AsimovProject
         private Vector2 position;
         private int buttonNum;
 
-        public PathButton(int buttonNum)
+        public PathButton(int buttonNum, Vector2 position)
         {
             this.buttonNum = buttonNum;
-            //Fill thisbutton field
-            //Determine Position Internally or Externally?
+            this.position = position;
+            thisButton = buttons[buttonNum];
         }
-        public void Load()
+        public static void Load()
         {
-            //Load in Game Load method
+            //buttons[0] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
+            //buttons[1] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
+            //buttons[2] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
         }
         public void Draw()
         {
-            //Call in GameManager Draw method
+            GameServices.spriteBatch.Draw(thisButton, position, Color.White);
         }
         public Vector2 getPosition()
         {

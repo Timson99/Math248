@@ -9,6 +9,8 @@ namespace AsimovProject
 {
     public class Game1 : Game
     {
+        //public static int gameWidth = 1920;
+        //public static int gameHeight = 1080;
         public static int gameWidth = 1280;
         public static int gameHeight = 720;
         GraphicsDeviceManager graphics;
@@ -22,6 +24,9 @@ namespace AsimovProject
             graphics.PreferredBackBufferWidth = gameWidth;
             graphics.PreferredBackBufferHeight = gameHeight;
             Content.RootDirectory = "Content";
+            //graphics.IsFullScreen = true;
+            IsMouseVisible = true;
+            
         }
 
         protected override void Initialize()
@@ -40,6 +45,7 @@ namespace AsimovProject
             GameServices.AddService<ContentManager>(Content);
 
             gameManager.Load();
+            PathButton.Load();
         }
 
         protected override void UnloadContent()

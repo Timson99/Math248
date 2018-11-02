@@ -16,7 +16,10 @@ namespace AsimovProject
         private EventNode entryNode;
         private EventNode A;
         private EventNode B;
-        private EventNode AABC;
+        private EventNode AA;
+        private EventNode AB;
+        private EventNode BA;
+        private EventNode BB;
         //etc.
         public Path2()
         {
