@@ -25,6 +25,7 @@ namespace AsimovProject
 
         //Event Handling 
         EventNode mainMenu;
+        EventNode characterSelect;
         EventNode currentNode; //Set equal to current node of chosen path
         Path1 path1 = new Path1();
         Path2 path2 = new Path2();
@@ -38,9 +39,14 @@ namespace AsimovProject
         {
             List<string> temp = new List<string>();
             temp.Add("Quirk");
-            mainMenu = new EventNode("space2", temp, 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
-            mainMenu.setPath(0, path1.getEntryNode());
-            mainMenu.setPath(1, path2.getEntryNode());
+            mainMenu = new EventNode("field", temp, 1, "This is the main menu");
+            temp.Clear();
+            temp.Add("Vp");
+            characterSelect = new EventNode("space2", temp, 2, "This is the character select");
+
+            mainMenu.setPath(0, characterSelect);
+            characterSelect.setPath(0, path1.getEntryNode());
+            characterSelect.setPath(1, path2.getEntryNode());
             currentNode = mainMenu;
 
         }
@@ -81,28 +87,41 @@ namespace AsimovProject
                 currentNode = mainMenu;
 
             ////Input////
-            //if (currentNode.Equals(mainMenu))
-            //{
-              //  buttons.Add(new PathButton(3, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
-            //}
-            //else
-            //{
-                int tempNumButtons = currentNode.getNumButtons();
-                for (int i = 0; i < tempNumButtons; i++)
+            if (currentNode.Equals(mainMenu))
+            {
+                buttons.Add(new PathButton(3, 0, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
+            }
+            else
+            {
+                int maxButtons = currentNode.getNumButtons();
+                for (int i = 0; i < maxButtons; i++)
                 {
-                    buttons.Add(new PathButton(i, new Vector2(buttonPos.X + i * (buttonDelta), buttonPos.Y)));
+                    
+                    buttons.Add(new PathButton(i, i,new Vector2(buttonPos.X + i * (buttonDelta), buttonPos.Y)));
+
                 }
-            //}
+            }
 
             MouseState mState = Mouse.GetState();
 
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                if (buttons[i].getRectangle().Contains(mState.X, mState.Y))
+                {
+                    buttons[i].colored = true;
+                }
+                else
+                {
+                    buttons[i].colored = false;
+                }
+            }
             if (mState.LeftButton == ButtonState.Pressed && mReleased == true)
             {
                 for(int i = 0; i < buttons.Count; i++)
                 {
                     if(buttons[i].getRectangle().Contains(mState.X,mState.Y))
                     {
-                        currentNode = currentNode.nextNode(buttons[i].getButtonNum());
+                        currentNode = currentNode.nextNode(buttons[i].getButtonPath());
                     }
                 }
                 mReleased = false;

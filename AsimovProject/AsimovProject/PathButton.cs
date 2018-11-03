@@ -18,13 +18,16 @@ namespace AsimovProject
         private Rectangle rect;
         private Texture2D thisButton;
         private Vector2 position;
-        private int buttonNum;
+        private int buttonTex;
+        private int buttonPath; //Path index followed by button
+        public bool colored = false;
 
-        public PathButton(int buttonNum, Vector2 position)
+        public PathButton(int buttonTex, int buttonPath, Vector2 position)
         {
-            this.buttonNum = buttonNum;
+            this.buttonTex = buttonTex;
+            this.buttonPath = buttonPath;
             this.position = position;
-            thisButton = buttons[buttonNum];
+            thisButton = buttons[buttonTex];
 
             if(buttons.Length == 3)
             {
@@ -45,15 +48,15 @@ namespace AsimovProject
         }
         public void Draw()
         {
-            GameServices.spriteBatch.Draw(thisButton, position, Color.White);
+            GameServices.spriteBatch.Draw(thisButton, position, (colored ? Color.OrangeRed : Color.White));
         }
         public Vector2 getPosition()
         {
             return position;
         }
-        public int getButtonNum()
+        public int getButtonPath()
         {
-            return buttonNum;
+            return buttonPath;
         }
 
         public Rectangle getRectangle()

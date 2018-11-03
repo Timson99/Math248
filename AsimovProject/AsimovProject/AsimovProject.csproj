@@ -116,7 +116,6 @@
     </None>
     <None Include="app.manifest" />
     <None Include="Content\Assets\Fonts\gameFont.spritefont" />
-    <None Include="Content\Assets\Fonts\spaceBackground.jpg~" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\Backgrounds\field.jpg" />
