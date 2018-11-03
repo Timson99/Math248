@@ -23,9 +23,13 @@ namespace AsimovProject
         {
             this.backgroundKey = backgroundKey;
 
-            for(int i = 0; i < spriteKeys.Count; i++ )
+            this.spriteKeys = new List<string>();
+            if (spriteKeys != null)
             {
-                this.spriteKeys.Add(spriteKeys[i]);
+                for (int i = 0; i < spriteKeys.Count; i++)
+                {
+                    this.spriteKeys.Add(spriteKeys[i]);
+                }
             }
             this.text = text;
             numButtons = numPaths;

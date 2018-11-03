@@ -29,43 +29,45 @@ namespace AsimovProject{
 
             /////////////////////////////////////////////////entryNode
             List<string> temp = new List<string>();
-            temp.Add("Quirk"); 
-            entryNode = new EventNode("space2", temp, 2, "This is the beginning of Path1");
+            temp.Add("RoboHap"); 
+            entryNode = new EventNode("sky", temp, 2, "This is the beginning of Path1");
             temp.Clear();
-            entryNode.setPath(0, A);
-            entryNode.setPath(1, B);
+           
             /////////////////////////////////////////////
             ///
             ////////////////////////////////////////////
             //set for A: say hello or approach Captain Quirk
-            temp.Add("Quirk");
-            temp.Add("RoboHap");
-            A = new EventNode("space2", temp ,2,"for decision A");
+            temp.Add("Vp");
+            temp.Add("RoboMad");
+            A = new EventNode("glowyGrass", temp ,2,"for decision A");
             temp.Clear();
-            A.setPath(0, AA);
-            A.setPath(1, AB);
+            
             //////////////////////////////////////////
             //entry for B 
-            temp.Add("RoboHap");
-            temp.Add("RoboMad");
-            B = new EventNode("space2", temp, 2,"for decision B");
+            temp.Add("Quirk");
+            B = new EventNode("dino", temp, 2,"for decision B");
             temp.Clear();
-            B.setPath(0, BA);
-            B.setPath(1, BB);
+         ;
 
             //////////////////////////////////////////
             //
             //AB = new EventNode("space3")
-      
-        
+
+
 
 
             /////////////////////////////////////////////////
-
+            setPath();
         }
         private void setPath() {
             entryNode.setPath(0, A);
             entryNode.setPath(1, B);
+
+            A.setPath(0, AA);
+            A.setPath(1, AB);
+
+            B.setPath(0, BA);
+            B.setPath(1, BB);
         }
         public EventNode getEntryNode(){
             return entryNode;

@@ -58,7 +58,7 @@ namespace AsimovProject
             backgrounds["field"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/field"), new Vector2(0, 0));
             backgrounds["glowyGrass"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/glowyGrass"), new Vector2(0, 0));
             backgrounds["sunny"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sunny"), new Vector2(0, 0));
-            backgrounds["weird"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
+            backgrounds["dino"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
             backgrounds["mountain"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/mountain"), new Vector2(0, 0));
 
 
@@ -66,8 +66,8 @@ namespace AsimovProject
             sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(0, 0));
             sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(0, 0));
             sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
-            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 0));
-            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 0));
+            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 2));
+            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 4));
 
 
 
@@ -117,7 +117,7 @@ namespace AsimovProject
 
 
             currentBackground = backgrounds[currentNode.getBackgroundKey()]; 
-            for (int i = 0; i < currentNode.getSpriteKeyList().Count(); i++){
+            for (int i = 0; i < currentNode.getSpriteKeyList().Count; i++){
                 onscreen.Add(sprites[currentNode.getSpriteKeyList()[i]]); 
             }
             currentText = currentNode.getText();
