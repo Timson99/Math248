@@ -36,7 +36,9 @@ namespace AsimovProject
 
         public GameManager()
         {
-            mainMenu = new EventNode("space2", new List<string>(), 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
+            List<string> temp = new List<string>();
+            temp.Add("Quirk");
+            mainMenu = new EventNode("space2", temp, 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
             mainMenu.setPath(0, path1.getEntryNode());
             mainMenu.setPath(1, path2.getEntryNode());
             currentNode = mainMenu;

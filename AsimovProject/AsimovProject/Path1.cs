@@ -14,10 +14,12 @@ namespace AsimovProject{
         private EventNode entryNode;
         private EventNode A;
         private EventNode B;
+        //private EventNode C;
         private EventNode AA;
         private EventNode AB;
         private EventNode BA;
         private EventNode BB;
+
         //etc.
 
         public Path1(){
@@ -27,7 +29,7 @@ namespace AsimovProject{
 
             /////////////////////////////////////////////////entryNode
             List<string> temp = new List<string>();
-            //temp.Add("kirk or something"); 
+            temp.Add("Quirk"); 
             entryNode = new EventNode("space2", temp, 2, "This is the beginning of Path1");
             temp.Clear();
             entryNode.setPath(0, A);
@@ -36,13 +38,16 @@ namespace AsimovProject{
             ///
             ////////////////////////////////////////////
             //set for A: say hello or approach Captain Quirk
-            //temp.Add() for the sprites
-            A = new EventNode("space2",temp,2,"for decision A");
+            temp.Add("Quirk");
+            temp.Add("RoboHap");
+            A = new EventNode("space2", temp ,2,"for decision A");
             temp.Clear();
             A.setPath(0, AA);
             A.setPath(1, AB);
             //////////////////////////////////////////
             //entry for B 
+            temp.Add("RoboHap");
+            temp.Add("RoboMad");
             B = new EventNode("space2", temp, 2,"for decision B");
             temp.Clear();
             B.setPath(0, BA);
@@ -50,13 +55,17 @@ namespace AsimovProject{
 
             //////////////////////////////////////////
             //
-            //AA = new EventNode("space2",temp)
+            //AB = new EventNode("space3")
       
         
 
 
             /////////////////////////////////////////////////
 
+        }
+        private void setPath() {
+            entryNode.setPath(0, A);
+            entryNode.setPath(1, B);
         }
         public EventNode getEntryNode(){
             return entryNode;

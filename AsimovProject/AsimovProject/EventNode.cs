@@ -22,7 +22,11 @@ namespace AsimovProject
         public EventNode(string backgroundKey, List<string> spriteKeys, int numPaths, string text)
         {
             this.backgroundKey = backgroundKey;
-            this.spriteKeys = spriteKeys;
+
+            for(int i = 0; i < spriteKeys.Count; i++ )
+            {
+                this.spriteKeys.Add(spriteKeys[i]);
+            }
             this.text = text;
             numButtons = numPaths;
             paths = new EventNode[numButtons];
