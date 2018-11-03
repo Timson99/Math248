@@ -35,7 +35,7 @@ namespace AsimovProject{
             /////////////////////////////////////////////
             ///
             ////////////////////////////////////////////
-            //set for A 
+            //set for A: say hello or approach Captain Quirk
             //temp.Add() for the sprites
             A = new EventNode("space2",temp,2,"for decision A");
             temp.Clear();
@@ -47,6 +47,10 @@ namespace AsimovProject{
             temp.Clear();
             B.setPath(0, BA);
             B.setPath(1, BB);
+
+            //////////////////////////////////////////
+            //
+            //AA = new EventNode("space2",temp)
       
         
 

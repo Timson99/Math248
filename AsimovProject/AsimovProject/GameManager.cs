@@ -36,7 +36,7 @@ namespace AsimovProject
 
         public GameManager()
         {
-            mainMenu = new EventNode("space", new List<string>(), 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
+            mainMenu = new EventNode("space2", new List<string>(), 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
             mainMenu.setPath(0, path1.getEntryNode());
             mainMenu.setPath(1, path2.getEntryNode());
             currentNode = mainMenu;
@@ -51,12 +51,22 @@ namespace AsimovProject
 
             //Load All Backgrounds into "backgrounds" Dictionary as StillSprites
             backgrounds["sky"]  = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sky"), new Vector2(0,0));
-            backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
+            //backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
             backgrounds["space2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/space2"), new Vector2(0, 0));
-            currentBackground = backgrounds["space2"];
-            //Load All Sprites into "sprites" Dictionary as StillSprites
+            backgrounds["field"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/field"), new Vector2(0, 0));
+            backgrounds["glowyGrass"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/glowyGrass"), new Vector2(0, 0));
+            backgrounds["sunny"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sunny"), new Vector2(0, 0));
+            backgrounds["weird"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
+            backgrounds["mountain"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/mountain"), new Vector2(0, 0));
 
-            
+
+            //Load All Sprites into "sprites" Dictionary as StillSprites
+            sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(0, 0));
+            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(0, 0));
+            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
+            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 0));
+            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 0));
+
 
 
         }
@@ -69,15 +79,18 @@ namespace AsimovProject
                 currentNode = mainMenu;
 
             ////Input////
-            if(currentNode.Equals(mainMenu))
-            {
-                buttons.Add(new PathButton(3, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
-            }
-            int tempNumButtons = currentNode.getNumButtons();
-            for(int i = 0; i < tempNumButtons; i++)
-            {
-                buttons.Add(new PathButton(i, new Vector2(buttonPos.X + i*(buttonDelta), buttonPos.Y)));   
-            }
+            //if (currentNode.Equals(mainMenu))
+            //{
+              //  buttons.Add(new PathButton(3, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
+            //}
+            //else
+            //{
+                int tempNumButtons = currentNode.getNumButtons();
+                for (int i = 0; i < tempNumButtons; i++)
+                {
+                    buttons.Add(new PathButton(i, new Vector2(buttonPos.X + i * (buttonDelta), buttonPos.Y)));
+                }
+            //}
 
             MouseState mState = Mouse.GetState();
 
@@ -97,7 +110,10 @@ namespace AsimovProject
                 mReleased = true;
             }
 
-                    
+            if (currentNode == null) //If null, assumes game is over and starts from the beginning
+                currentNode = mainMenu;
+
+
             currentBackground = backgrounds[currentNode.getBackgroundKey()]; 
             for (int i = 0; i < currentNode.getSpriteKeyList().Count(); i++){
                 onscreen.Add(sprites[currentNode.getSpriteKeyList()[i]]); 

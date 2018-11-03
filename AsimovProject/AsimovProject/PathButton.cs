@@ -28,11 +28,11 @@ namespace AsimovProject
 
             if(buttons.Length == 3)
             {
-                rect = new Rectangle((int)position.X, (int)position.Y, 100, 100);
+                rect = new Rectangle((int)position.X, (int)position.Y, 300, 150);
             }
             else
             {
-                rect = new Rectangle((int)position.X, (int)position.Y, 100, 100);
+                rect = new Rectangle((int)position.X, (int)position.Y, 200, 200);
             }
         }
         public static void Load()

@@ -116,15 +116,27 @@
     </None>
     <None Include="app.manifest" />
     <None Include="Content\Assets\Fonts\gameFont.spritefont" />
+    <None Include="Content\Assets\Fonts\spaceBackground.jpg~" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\Backgrounds\field.jpg" />
+    <Content Include="Content\Assets\Backgrounds\glowyGrass.jpg" />
+    <Content Include="Content\Assets\Backgrounds\mountain.png" />
     <Content Include="Content\Assets\Backgrounds\sky.png" />
     <Content Include="Content\Assets\Backgrounds\space2.jpg" />
-    <Content Include="Content\Assets\Backgrounds\spaceBackground.jpg" />
+    <Content Include="Content\Assets\Backgrounds\sunny.png" />
+    <Content Include="Content\Assets\Backgrounds\wierd.png" />
+    <Content Include="Content\Assets\Buttons\buttA.png" />
+    <Content Include="Content\Assets\Buttons\buttB.png" />
+    <Content Include="Content\Assets\Buttons\ButtC.png" />
+    <Content Include="Content\Assets\Buttons\buttStart.png" />
+    <Content Include="Content\Assets\Sprites\angryRobot.png" />
+    <Content Include="Content\Assets\Sprites\happyRobot.png" />
+    <Content Include="Content\Assets\Sprites\kim.png" />
+    <Content Include="Content\Assets\Sprites\kirk.png" />
+    <Content Include="Content\Assets\Sprites\president.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Assets\Sprites\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
