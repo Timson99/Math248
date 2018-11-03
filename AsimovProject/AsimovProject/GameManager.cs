@@ -30,8 +30,8 @@ namespace AsimovProject
         Path2 path2 = new Path2();
 
         //Button Info
-        Vector2 buttonPos = new Vector2(Game1.gameHeight / 4, Game1.gameWidth / 4);
-        int buttonDelta = 200;
+        Vector2 buttonPos = new Vector2(100, 400);
+        int buttonDelta = 400;
         bool mReleased = true;
 
         public GameManager()
