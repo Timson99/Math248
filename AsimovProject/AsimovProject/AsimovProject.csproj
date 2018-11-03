@@ -7,7 +7,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5EAEB39C-A476-4D87-9982-943230BC8440}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AsimovProject</RootNamespace>
     <AssemblyName>AsimovProject</AssemblyName>
@@ -40,6 +40,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnimatedSprite.cs" />
@@ -116,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\Backgrounds\sky.png" />
+    <Content Include="Content\Assets\Backgrounds\space2.jpg" />
     <Content Include="Content\Assets\Backgrounds\spaceBackground.jpg" />
   </ItemGroup>
   <ItemGroup>

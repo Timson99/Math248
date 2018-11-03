@@ -19,7 +19,7 @@ namespace AsimovProject
         private int numButtons;
         private EventNode[] paths;
 
-        public EventNode(string backgroundKey, List<string> spriteKeys, string text, int numPaths)
+        public EventNode(string backgroundKey, List<string> spriteKeys, int numPaths, string text)
         {
             this.backgroundKey = backgroundKey;
             this.spriteKeys = spriteKeys;

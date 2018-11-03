@@ -61,6 +61,8 @@ namespace AsimovProject
                 Exit();
 
 
+            gameManager.Update();
+
             base.Update(gameTime);
         }
 

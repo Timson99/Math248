@@ -8,10 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
-namespace AsimovProject
-{
-    class Path1
-    {
+namespace AsimovProject{
+    class Path1{
         //List of all event nodes, labled by path choices. All must be listed up here.
         private EventNode entryNode;
         private EventNode A;
@@ -22,14 +20,41 @@ namespace AsimovProject
         private EventNode BB;
         //etc.
 
-        public Path1()
-        {
+        public Path1(){
             //Create Event Nodes Starting from Entry Node
             //List path fields together to create a tree structure
             // Ex AAB.setPath(0,AABA)   AAB.setPath(1,AABB)
+
+            /////////////////////////////////////////////////entryNode
+            List<string> temp = new List<string>();
+            //temp.Add("kirk or something"); 
+            entryNode = new EventNode("space2", temp, 2, "This is the beginning of Path1");
+            temp.Clear();
+            entryNode.setPath(0, A);
+            entryNode.setPath(1, B);
+            /////////////////////////////////////////////
+            ///
+            ////////////////////////////////////////////
+            //set for A 
+            //temp.Add() for the sprites
+            A = new EventNode("space2",temp,2,"for decision A");
+            temp.Clear();
+            A.setPath(0, AA);
+            A.setPath(1, AB);
+            //////////////////////////////////////////
+            //entry for B 
+            B = new EventNode("space2", temp, 2,"for decision B");
+            temp.Clear();
+            B.setPath(0, BA);
+            B.setPath(1, BB);
+      
+        
+
+
+            /////////////////////////////////////////////////
+
         }
-        public EventNode getEntryNode()
-        {
+        public EventNode getEntryNode(){
             return entryNode;
         }
     }

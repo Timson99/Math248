@@ -14,7 +14,8 @@ namespace AsimovProject
     //Done besides loading
     class PathButton
     {
-        private Texture2D[] buttons;
+        private static Texture2D[] buttons;
+        private Rectangle rect;
         private Texture2D thisButton;
         private Vector2 position;
         private int buttonNum;
@@ -24,12 +25,23 @@ namespace AsimovProject
             this.buttonNum = buttonNum;
             this.position = position;
             thisButton = buttons[buttonNum];
+
+            if(buttons.Length == 3)
+            {
+                rect = new Rectangle((int)position.X, (int)position.Y, 100, 100);
+            }
+            else
+            {
+                rect = new Rectangle((int)position.X, (int)position.Y, 100, 100);
+            }
         }
         public static void Load()
         {
-            //buttons[0] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
-            //buttons[1] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
-            //buttons[2] = GameServices.Content.Load<Texture2D>("Assets/Buttons/");
+            buttons = new Texture2D[4];
+            buttons[0] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttA");
+            buttons[1] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttB");
+            buttons[2] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttC");
+            buttons[3] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttStart");
         }
         public void Draw()
         {
@@ -42,6 +54,11 @@ namespace AsimovProject
         public int getButtonNum()
         {
             return buttonNum;
+        }
+
+        public Rectangle getRectangle()
+        {
+            return rect;
         }
     }
 }

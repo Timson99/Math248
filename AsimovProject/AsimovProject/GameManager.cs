@@ -29,9 +29,14 @@ namespace AsimovProject
         Path1 path1 = new Path1();
         Path2 path2 = new Path2();
 
+        //Button Info
+        Vector2 buttonPos = new Vector2(Game1.gameHeight / 4, Game1.gameWidth / 4);
+        int buttonDelta = 200;
+        bool mReleased = true;
+
         public GameManager()
         {
-            mainMenu = new EventNode("", new List<string>(), "", 2); //No Background, Empty Sprite List, No Text, Two Paths
+            mainMenu = new EventNode("space", new List<string>(), 2, "This is the main menu"); //No Background, Empty Sprite List, No Text, Two Paths
             mainMenu.setPath(0, path1.getEntryNode());
             mainMenu.setPath(1, path2.getEntryNode());
             currentNode = mainMenu;
@@ -47,7 +52,8 @@ namespace AsimovProject
             //Load All Backgrounds into "backgrounds" Dictionary as StillSprites
             backgrounds["sky"]  = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sky"), new Vector2(0,0));
             backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
-
+            backgrounds["space2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/space2"), new Vector2(0, 0));
+            currentBackground = backgrounds["space2"];
             //Load All Sprites into "sprites" Dictionary as StillSprites
 
             
@@ -60,24 +66,48 @@ namespace AsimovProject
             onscreen.Clear(); //Clears List for Repopulation
 
             if (currentNode == null) //If null, assumes game is over and starts from the beginning
-                currentNode = mainMenu; 
+                currentNode = mainMenu;
 
             ////Input////
-                //Get Number of Buttons needed from currentEvent EventNode, Create that amount of PathButton Objects, add them to the button list
-                        //Use MouseState mState = Mouse.getState (Has X and Y fields and LeftButton field)
-                        //Check if mouse is over button, get each buttons Rectangle (Look up under Microsoft.Xna.Framework.Graphics.Texture2D))
-                        // and call .Contains() [I think] to check if the rectangle contins the mouses position
-                        //If mouse is in a buttons rectangle, Check for input with mState.LeftButton == ButtonState.Pressed
-                        //Make sure input is only registed once (Use a mouseRelease Variable that tracks if the mouse was not pressed in the last frame)
-                //If input registered on a button, Call nextNode() from currentNode using buttonNum of the pressed button
-                //Set currentNode equal to the new currentNode (returned by nextNode())
-            
+            if(currentNode.Equals(mainMenu))
+            {
+                buttons.Add(new PathButton(3, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
+            }
+            int tempNumButtons = currentNode.getNumButtons();
+            for(int i = 0; i < tempNumButtons; i++)
+            {
+                buttons.Add(new PathButton(i, new Vector2(buttonPos.X + i*(buttonDelta), buttonPos.Y)));   
+            }
 
-            ////Use info from currentEvent to populate the Drawn Fields////
-                //Get backround key from current event, use with backgrounds list to set currentBackground
-                //Get the list of sprite keys from the currentNode, and access the StillSprite dictionary 
-                //putting each sprite key in the sprites dictionaty into the onscreen using .Add()
-                //Get text string from the current event and set to currentText field.       
+            MouseState mState = Mouse.GetState();
+
+            if (mState.LeftButton == ButtonState.Pressed && mReleased == true)
+            {
+                for(int i = 0; i < buttons.Count; i++)
+                {
+                    if(buttons[i].getRectangle().Contains(mState.X,mState.Y))
+                    {
+                        currentNode = currentNode.nextNode(buttons[i].getButtonNum());
+                    }
+                }
+                mReleased = false;
+            }
+            if(mState.LeftButton == ButtonState.Released)
+            {
+                mReleased = true;
+            }
+
+                    
+            currentBackground = backgrounds[currentNode.getBackgroundKey()]; 
+            for (int i = 0; i < currentNode.getSpriteKeyList().Count(); i++){
+                onscreen.Add(sprites[currentNode.getSpriteKeyList()[i]]); 
+            }
+            currentText = currentNode.getText();
+
+            Console.WriteLine(currentNode.getBackgroundKey());
+
+
+                     
         }
         public void Draw()
         {
