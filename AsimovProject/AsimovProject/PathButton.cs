@@ -29,7 +29,7 @@ namespace AsimovProject
             this.position = position;
             thisButton = buttons[buttonTex];
 
-            if(buttons.Length == 3)
+            if(buttonTex == 3)
             {
                 rect = new Rectangle((int)position.X, (int)position.Y, 300, 150);
             }

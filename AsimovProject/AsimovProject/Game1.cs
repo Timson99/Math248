@@ -70,8 +70,8 @@ namespace AsimovProject
         {
             GraphicsDevice.Clear(Color.ForestGreen);
 
-            spriteBatch.Begin();
-
+            spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null,
+            Matrix.CreateScale((float)gameWidth/1280));
             gameManager.Draw();
 
             spriteBatch.End();

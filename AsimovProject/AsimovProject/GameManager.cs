@@ -121,6 +121,9 @@ namespace AsimovProject
                 {
                     if(buttons[i].getRectangle().Contains(mState.X,mState.Y))
                     {
+                        if (buttons[i].getButtonPath() == -1)
+                            Environment.Exit(0);
+
                         currentNode = currentNode.nextNode(buttons[i].getButtonPath());
                     }
                 }
@@ -154,15 +157,11 @@ namespace AsimovProject
 
             //Draw Sprites with loop, Iterate though onscreen list (using listName.Count) and call .Draw from StillSprite
             for(int i = 0; i < onscreen.Count; i++)
-            {
                 onscreen[i].Draw();
-            }
 
             //Iterate through button list and call PathButton.Draw() for each instance
             for (int i = 0; i < buttons.Count; i++)
-            {
                 buttons[i].Draw();
-            }
 
             //Draw Font
             GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
