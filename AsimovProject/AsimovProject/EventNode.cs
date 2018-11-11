@@ -51,11 +51,6 @@ namespace AsimovProject
             return text;
         }
 
-        public EventNode[] getPaths()
-        {
-            return paths;
-        }
-
         //Use in Path1.cs and Path2.cs to create trees
         public void setPath(int pathNumber, EventNode eN)
         {

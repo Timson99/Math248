@@ -8,42 +8,71 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
-namespace AsimovProject { 
+namespace AsimovProject {
+
+    //Vice President
     class Path2 {
         //List of all event nodes, labled by path choices. All must be listed up here.
         private EventNode entryNode;
         private EventNode A;
         private EventNode B;
-        private EventNode C;
+
         private EventNode AA;
         private EventNode AB;
-        private EventNode BA;
-        private EventNode BB;
-        private EventNode BC;
+        private EventNode AC;
+
+        private EventNode AAA;
+        private EventNode AAB;
 
         //etc.
         public Path2(){
             // entrynode for path 2
             List<string> temp = new List<string>();
+            temp.Add("RoboHap");
+            temp.Add("Vp");
             entryNode = new EventNode("space2", temp, 2, "This is the beginning of Path2");
             temp.Clear();
-            
+
 
             ////////////// for A 
-            A = new EventNode("space2", temp, 2, "for decision A");
-           
+            temp.Add("RoboMad");
+            temp.Add("Pres");
+            A = new EventNode("space2", temp, 3, "for decision A");
             temp.Clear();
             
-
+            /////////////
             ////// for B 
-            B = new EventNode("space2", temp, 3, "for decision B");
+            B = new EventNode("space2", temp, 1, "Say no: GAME OVER");
             temp.Clear();
-         
-            //B.setPath(2, BC);
 
-            //Create Event Nodes Starting from Entry Node
-            //List path fields together to create a tree structure
-            // Ex AAB.setPath(0,AABA)   AAB.setPath(1,AABB)
+            //////
+            ////// for AA
+            temp.Add("Vp");
+            AA = new EventNode("space2", temp, 2, "for decision B");
+            temp.Clear();
+
+            //////
+            ////// for AB 
+            AB = new EventNode("space2", temp, 3, "for decision B");
+            temp.Clear();
+
+            //////
+            ////// for AC 
+            AC = new EventNode("space2", temp, 3, "for decision B");
+            temp.Clear();
+
+            //////
+            ////// for AAA
+            AAA = new EventNode("space2", temp, 1, "for decision B");
+            temp.Clear();
+
+            ////
+            ////// for AAB 
+            AAB = new EventNode("space2", temp, 1, "for decision B");
+            temp.Clear();
+
+            //////
+
 
 
             setPaths();
@@ -61,13 +90,16 @@ namespace AsimovProject {
 
             A.setPath(0, AA);
             A.setPath(1, AB);
+            A.setPath(2, AC);
 
-          
-            B.setPath(0, BA);
-            B.setPath(1, BB);
-            B.setPath(2, BC);
+            AA.setPath(0, AAA);
+            AA.setPath(1, AAB);
 
-            
+
+
+
+
+
 
 
         }
