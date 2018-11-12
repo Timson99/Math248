@@ -38,10 +38,11 @@ namespace AsimovProject
         public GameManager()
         {
             List<string> temp = new List<string>();
-            temp.Add("Quirk");
+            temp.Add("RoboHap");
             mainMenu = new EventNode("field", temp, 1, "This is the main menu");
             temp.Clear();
             temp.Add("Vp");
+            temp.Add("Quirk");
             characterSelect = new EventNode("space2", temp, 2, "This is the character select");
 
             mainMenu.setPath(0, characterSelect);
@@ -69,9 +70,9 @@ namespace AsimovProject
 
 
             //Load All Sprites into "sprites" Dictionary as StillSprites
-            sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(0, 0));
-            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(0, 0));
-            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
+            sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(500, 0));
+            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(200, 0));
+            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(200, 0));
             sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 2));
             sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 4));
 
@@ -94,12 +95,24 @@ namespace AsimovProject
             else
             {
                 int maxButtons = currentNode.getNumButtons();
-                for (int i = 0; i < maxButtons; i++)
+                if (maxButtons == 2) {
+                    buttons.Add(new PathButton(0, 0, new Vector2(200,400)));
+                    buttons.Add(new PathButton(1, 1, new Vector2(880,400)));
+                } else if(maxButtons == 3) {
+                    buttons.Add(new PathButton(0, 0, new Vector2(200, 400)));
+                    buttons.Add(new PathButton(1, 1, new Vector2(540, 400)));
+                    buttons.Add(new PathButton(2, 2, new Vector2(880, 400)));
+                }
+                else
+                {
+                    buttons.Add(new PathButton(0, 0, new Vector2(Game1.gameWidth/2 - 100, 400)));
+                }
+                /*for (int i = 0; i < maxButtons; i++)
                 {
                     
                     buttons.Add(new PathButton(i, i,new Vector2(buttonPos.X + i * (buttonDelta), buttonPos.Y)));
 
-                }
+                }*/
             }
 
             MouseState mState = Mouse.GetState();
