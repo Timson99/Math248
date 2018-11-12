@@ -29,9 +29,13 @@ namespace AsimovProject
             this.position = position;
             thisButton = buttons[buttonTex];
 
-            if(buttonTex == 3)
+            if(buttonTex == 3 || buttonTex == 4)
             {
                 rect = new Rectangle((int)position.X, (int)position.Y, 300, 150);
+            }
+            else if(buttonTex == 5)
+            {
+                rect = new Rectangle((int)position.X, (int)position.Y, 50, 50);
             }
             else
             {
@@ -40,11 +44,13 @@ namespace AsimovProject
         }
         public static void Load()
         {
-            buttons = new Texture2D[4];
+            buttons = new Texture2D[6];
             buttons[0] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttA");
             buttons[1] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttB");
             buttons[2] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttC");
             buttons[3] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttStart");
+            buttons[4] = GameServices.Content.Load<Texture2D>("Assets/Buttons/buttRestart");
+            buttons[5] = GameServices.Content.Load<Texture2D>("Assets/Buttons/xButt");
         }
         public void Draw()
         {

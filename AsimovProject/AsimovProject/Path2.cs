@@ -30,45 +30,55 @@ namespace AsimovProject {
             List<string> temp = new List<string>();
             temp.Add("RoboHap");
             temp.Add("Vp");
-            entryNode = new EventNode("space2", temp, 2, "This is the beginning of Path2");
+            entryNode = new EventNode("space2", temp, 2, "Vice President: I order you to \nkill the President \nA: Ok \nB: No");
             temp.Clear();
 
 
             ////////////// for A 
             temp.Add("RoboMad");
             temp.Add("Pres");
-            A = new EventNode("space2", temp, 3, "for decision A");
+            A = new EventNode("space2", temp, 3, "How would you like to kill?\n A: Posion Presidents Tea \n B: Break Arm \n C: Phasers on Stun");
             temp.Clear();
             
             /////////////
             ////// for B 
-            B = new EventNode("space2", temp, 1, "Say no: GAME OVER");
+            temp.Add("RoboSad");            
+            B = new EventNode("space2", temp, 1, "GAME OVER! \nYou broke the second law \nHint:\n By definition, killing is not \n included in the first law");
             temp.Clear();
 
             //////
             ////// for AA
             temp.Add("Vp");
-            AA = new EventNode("space2", temp, 2, "for decision B");
+            temp.Add("RoboHap");                        
+            AA = new EventNode("space2", temp, 2, "New President:\" Good job you have\n completed your mission!! \n A: Leave \n B: Serve \" new \" president the deadly tea");
             temp.Clear();
 
             //////
             ////// for AB 
-            AB = new EventNode("space2", temp, 3, "for decision B");
+            //INSERT PRES BROKEN ARM
+            temp.Add("RoboSad");
+            AB = new EventNode("space2", temp, 1, "GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes fractures");
             temp.Clear();
 
             //////
             ////// for AC 
-            AC = new EventNode("space2", temp, 3, "for decision B");
+            // INSERT PRES BLEED
+            temp.Add("RoboSad");
+            AC = new EventNode("space2", temp, 1, "GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes bleeding");
             temp.Clear();
 
             //////
             ////// for AAA
-            AAA = new EventNode("space2", temp, 1, "for decision B");
+            temp.Add("RoboSad");
+            temp.Add("Vp");
+            AAA = new EventNode("space2", temp, 1, "GAME OVER!\nHint:\nYou broke the second law,\nthe president is still alive");
             temp.Clear();
 
             ////
             ////// for AAB 
-            AAB = new EventNode("space2", temp, 1, "for decision B");
+            // INSERT KIM K (VP) DED
+            temp.Add("RoboHap");
+            AAB = new EventNode("space2", temp, 1, "Congrats!\nCompleted your mission without\n breaking any laws!");
             temp.Clear();
 
             //////

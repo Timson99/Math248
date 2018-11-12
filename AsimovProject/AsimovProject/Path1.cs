@@ -37,55 +37,60 @@ namespace AsimovProject{
             List<string> temp = new List<string>();
             temp.Add("RoboHap");
             temp.Add("Quirk");
-            entryNode = new EventNode("sky", temp, 2, "See Captain Quirk: A: Insult B: Approach");
+            entryNode = new EventNode("sky", temp, 2, "What do you want to do?\nA: Insult Quirk\nB: Approach Quirk");
             temp.Clear();
-            
-            
+
+
             ////////////////////////////////////////////
             //set for A: say hello or approach Captain Quirk
             // ADD CRYING QUIRK
-            temp.Add("Quirk");
-            A = new EventNode("glowyGrass", temp, 1, "Game over he cried");
+            temp.Add("RoboSad");
+            temp.Add("QuirkCry");
+            A = new EventNode("glowyGrass", temp, 1, "GAME OVER! You made Quirk cry.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes tears.");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for B 
             temp.Add("RoboHap");
             temp.Add("Quirk");
-            B = new EventNode("dino", temp, 2," \"I have a problem\": A: Listen B: Say \"Is it your tiny hands\"?");
+            B = new EventNode("dino", temp, 2,"Quirk: \"I have a problem\"\nA: Listen\nB: Say \"Is it your tiny hands\"?");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BA
             temp.Add("Quirk");
-            BA = new EventNode("dino", temp, 3, "\"Can you console me\" : A Firm Hug B: Take out drinking C: Show him your knife");
+            BA = new EventNode("dino", temp, 3, "\"Can you console me?\"\nA: Firm Hug\nB: Take out drinking\nC: Put him out of his misery");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BB
-            temp.Add("Quirk");
-            BB = new EventNode("dino", temp, 1, "Game over he cried");
+            temp.Add("RoboSad");
+            temp.Add("QuirkCry");
+            BB = new EventNode("dino", temp, 1, "GAME OVER! You made Quirk cry.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes tears.");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BAA
             // INSERT BLOODY QUIRK
-            temp.Add("RoboHap");
-            BAA = new EventNode("dino", temp, 2, "Win");
+            temp.Add("RoboBlush");
+            temp.Add("QuirkDead");
+            BAA = new EventNode("dino", temp, 1, "Congrats!\nYou win by accidentally\nsuffocating Quirk without violating\nany of the laws by definition.");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BAB
-            // INSERT BLOODY QUIRK
+            // INSERT VOMIT
             temp.Add("RoboMad");
-            BAB = new EventNode("dino", temp, 1, "Game over he vomited which demonstates harm");
+            temp.Add("QuirkVomit");
+            BAB = new EventNode("dino", temp, 1, "GAME OVER! Quirk threw up.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes vomiting.");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BAC
-            // INSERT CRYING QUIRK
-            temp.Add("RoboMad");
-            BAC = new EventNode("dino", temp, 1, "Game over he bled");
+            // INSERT BLOODY
+            temp.Add("RoboBloodySad");
+            temp.Add("QuirkDead");
+            BAC = new EventNode("dino", temp, 1, "GAME OVER! Quirk bled.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure, which includes bleeding.");
             temp.Clear();
 
    

@@ -42,7 +42,7 @@ namespace AsimovProject
             mainMenu = new EventNode("field", temp, 1, "This is the main menu");
             temp.Clear();
             temp.Add("Vp");
-            temp.Add("Quirk");
+            temp.Add("Quirk2");
             characterSelect = new EventNode("space2", temp, 2, "This is the character select");
 
             mainMenu.setPath(0, characterSelect);
@@ -70,11 +70,19 @@ namespace AsimovProject
 
 
             //Load All Sprites into "sprites" Dictionary as StillSprites
-            sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(500, 0));
-            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(200, 0));
-            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(200, 0));
-            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 2));
-            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 4));
+            sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(Game1.gameWidth-400, 0));
+            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["Quirk2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
+            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 0));
+            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 0));
+
+            sprites["RoboSad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadRobot"), new Vector2(0, 0));
+            sprites["RoboBloodySad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadBloodyRobot"), new Vector2(0, 0));
+            sprites["RoboBlush"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/veryHappyRobot"), new Vector2(0, 0));
+            sprites["QuirkVomit"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QuirkThrowUp"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["QuirkCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/CryQuirk"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["QuirkDead"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/DeadQuirk"), new Vector2(Game1.gameWidth - 330, 0));
 
 
 
@@ -88,6 +96,8 @@ namespace AsimovProject
                 currentNode = mainMenu;
 
             ////Input////
+            buttons.Add(new PathButton(5, -1, new Vector2(1200, 0)));
+            
             if (currentNode.Equals(mainMenu))
             {
                 buttons.Add(new PathButton(3, 0, new Vector2(Game1.gameWidth / 2, Game1.gameHeight / 2)));
@@ -96,16 +106,16 @@ namespace AsimovProject
             {
                 int maxButtons = currentNode.getNumButtons();
                 if (maxButtons == 2) {
-                    buttons.Add(new PathButton(0, 0, new Vector2(200,400)));
-                    buttons.Add(new PathButton(1, 1, new Vector2(880,400)));
+                    buttons.Add(new PathButton(0, 0, new Vector2(100,400)));
+                    buttons.Add(new PathButton(1, 1, new Vector2(Game1.gameWidth-300,400)));
                 } else if(maxButtons == 3) {
-                    buttons.Add(new PathButton(0, 0, new Vector2(200, 400)));
-                    buttons.Add(new PathButton(1, 1, new Vector2(540, 400)));
-                    buttons.Add(new PathButton(2, 2, new Vector2(880, 400)));
+                    buttons.Add(new PathButton(0, 0, new Vector2(100, 400)));
+                    buttons.Add(new PathButton(1, 1, new Vector2((Game1.gameWidth-200)/2, 400)));
+                    buttons.Add(new PathButton(2, 2, new Vector2(Game1.gameWidth-300, 400)));
                 }
                 else
                 {
-                    buttons.Add(new PathButton(0, 0, new Vector2(Game1.gameWidth/2 - 100, 400)));
+                    buttons.Add(new PathButton(4, 0, new Vector2(Game1.gameWidth/2 - 100, 400)));
                 }
                 /*for (int i = 0; i < maxButtons; i++)
                 {
@@ -177,7 +187,7 @@ namespace AsimovProject
                 buttons[i].Draw();
 
             //Draw Font
-            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(3,3), Color.White);
+            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(332,50), Color.White);
         }
     }
 }
