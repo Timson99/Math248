@@ -43,7 +43,7 @@ namespace AsimovProject {
             /////////////
             ////// for B 
             temp.Add("RoboSad");            
-            B = new EventNode("space2", temp, 1, "GAME OVER! \nYou broke the second law \nHint:\n By definition, killing is not \n included in the first law");
+            B = new EventNode("space2", temp, 1, "   GAME OVER! \nYou broke the second law \nHint:\nBy definition, killing is not \nincluded in the first law");
             temp.Clear();
 
             //////
@@ -57,21 +57,21 @@ namespace AsimovProject {
             ////// for AB 
             //INSERT PRES BROKEN ARM
             temp.Add("RoboSad");
-            AB = new EventNode("space2", temp, 1, "GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes fractures");
+            AB = new EventNode("space2", temp, 1, "   GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes fractures");
             temp.Clear();
 
             //////
             ////// for AC 
             // INSERT PRES BLEED
             temp.Add("RoboSad");
-            AC = new EventNode("space2", temp, 1, "GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes bleeding");
+            AC = new EventNode("space2", temp, 1, "   GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes bleeding");
             temp.Clear();
 
             //////
             ////// for AAA
             temp.Add("RoboSad");
             temp.Add("Vp");
-            AAA = new EventNode("space2", temp, 1, "GAME OVER!\nHint:\nYou broke the second law,\nthe president is still alive");
+            AAA = new EventNode("space2", temp, 1, "tGAME OVER!\nHint:\nYou broke the second law,\nthe president is still alive");
             temp.Clear();
 
             ////

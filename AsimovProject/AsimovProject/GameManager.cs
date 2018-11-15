@@ -43,7 +43,7 @@ namespace AsimovProject
             temp.Clear();
             temp.Add("Vp");
             temp.Add("Quirk2");
-            characterSelect = new EventNode("space2", temp, 2, "This is the character select");
+            characterSelect = new EventNode("space2", temp, 2, "Choose Your Target!\nA: Captain Quirk\nBVice President \nof the United Federations");
 
             mainMenu.setPath(0, characterSelect);
             characterSelect.setPath(0, path1.getEntryNode());
@@ -96,7 +96,7 @@ namespace AsimovProject
                 currentNode = mainMenu;
 
             ////Input////
-            buttons.Add(new PathButton(5, -1, new Vector2(1200, 0)));
+            buttons.Add(new PathButton(5, -1, new Vector2(1230, 0)));
             
             if (currentNode.Equals(mainMenu))
             {
@@ -187,7 +187,7 @@ namespace AsimovProject
                 buttons[i].Draw();
 
             //Draw Font
-            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(332,50), Color.White);
+            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(350,50), Color.White);
         }
     }
 }
