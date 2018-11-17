@@ -74,7 +74,7 @@ namespace AsimovProject{
             // INSERT BLOODY QUIRK
             temp.Add("RoboBlush");
             temp.Add("QuirkDead");
-            BAA = new EventNode("dino", temp, 1, "   Congrats!\nYou win by accidentally\nsuffocating Quirk without violating\nany of the laws by definition.");
+            BAA = new EventNode("fieldRed", temp, 1, "   Congrats!\nYou win by accidentally\nsuffocating Quirk without violating\nany of the laws by definition.");
             temp.Clear();
 
             //////////////////////////////////////////
@@ -90,7 +90,7 @@ namespace AsimovProject{
             // INSERT BLOODY
             temp.Add("RoboBloodySad");
             temp.Add("QuirkDead");
-            BAC = new EventNode("dino", temp, 1, "   GAME OVER!\nQuirk bled.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure, which includes bleeding.");
+            BAC = new EventNode("fieldRed", temp, 1, "   GAME OVER!\nQuirk bled.\nHint:\nYou broke the first law by the\ndefinition of Harm or Injure, which includes bleeding.");
             temp.Clear();
 
    

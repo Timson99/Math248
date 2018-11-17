@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\Backgrounds\field.jpg" />
+    <Content Include="Content\Assets\Backgrounds\fieldRed.jpg" />
     <Content Include="Content\Assets\Backgrounds\glowyGrass.jpg" />
     <Content Include="Content\Assets\Backgrounds\mountain.png" />
     <Content Include="Content\Assets\Backgrounds\sky.png" />

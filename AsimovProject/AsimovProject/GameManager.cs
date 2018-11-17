@@ -63,6 +63,7 @@ namespace AsimovProject
             //backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
             backgrounds["space2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/space2"), new Vector2(0, 0));
             backgrounds["field"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/field"), new Vector2(0, 0));
+            backgrounds["fieldRed"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/fieldRed"), new Vector2(0, 0));
             backgrounds["glowyGrass"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/glowyGrass"), new Vector2(0, 0));
             backgrounds["sunny"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sunny"), new Vector2(0, 0));
             backgrounds["dino"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
@@ -77,11 +78,11 @@ namespace AsimovProject
             sprites["PresBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentBlood"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["Quirk2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
-            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 0));
-            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 0));
-            sprites["RoboSad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadRobot"), new Vector2(0, 0));
-            sprites["RoboBloodySad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadBloodyRobot"), new Vector2(0, 0));
-            sprites["RoboBlush"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/veryHappyRobot"), new Vector2(0, 0));
+            sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(-25, 0));
+            sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(-25, 0));
+            sprites["RoboSad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadRobot"), new Vector2(-25, 0));
+            sprites["RoboBloodySad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadBloodyRobot"), new Vector2(-25, 0));
+            sprites["RoboBlush"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/veryHappyRobot"), new Vector2(-25, 0));
             sprites["QuirkVomit"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QuirkThrowUp"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["QuirkCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/CryQuirk"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["QuirkDead"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/DeadQuirk"), new Vector2(Game1.gameWidth - 330, 0));
@@ -119,12 +120,6 @@ namespace AsimovProject
                 {
                     buttons.Add(new PathButton(4, 0, new Vector2(Game1.gameWidth/2 - 100, 400)));
                 }
-                /*for (int i = 0; i < maxButtons; i++)
-                {
-                    
-                    buttons.Add(new PathButton(i, i,new Vector2(buttonPos.X + i * (buttonDelta), buttonPos.Y)));
-
-                }*/
             }
 
             MouseState mState = Mouse.GetState();
