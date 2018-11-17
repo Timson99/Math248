@@ -71,12 +71,14 @@ namespace AsimovProject
 
             //Load All Sprites into "sprites" Dictionary as StillSprites
             sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(Game1.gameWidth-400, 0));
+            sprites["VpCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kimSad"), new Vector2(Game1.gameWidth - 400, 0));
             sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["PresCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentCry"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["PresBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentBlood"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(Game1.gameWidth - 330, 0));
             sprites["Quirk2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
             sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(0, 0));
             sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(0, 0));
-
             sprites["RoboSad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadRobot"), new Vector2(0, 0));
             sprites["RoboBloodySad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadBloodyRobot"), new Vector2(0, 0));
             sprites["RoboBlush"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/veryHappyRobot"), new Vector2(0, 0));

@@ -7,7 +7,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5EAEB39C-A476-4D87-9982-943230BC8440}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AsimovProject</RootNamespace>
     <AssemblyName>AsimovProject</AssemblyName>
@@ -195,8 +195,11 @@
     <Content Include="Content\Assets\Sprites\DeadQuirk.png" />
     <Content Include="Content\Assets\Sprites\happyRobot.png" />
     <Content Include="Content\Assets\Sprites\kim.png" />
+    <Content Include="Content\Assets\Sprites\kimSad.png" />
     <Content Include="Content\Assets\Sprites\kirk.png" />
     <Content Include="Content\Assets\Sprites\president.png" />
+    <Content Include="Content\Assets\Sprites\presidentBlood.png" />
+    <Content Include="Content\Assets\Sprites\presidentCry.png" />
     <Content Include="Content\Assets\Sprites\QuirkThrowUp.png" />
     <Content Include="Content\Assets\Sprites\sadBloodyRobot.png" />
     <Content Include="Content\Assets\Sprites\sadRobot.png" />

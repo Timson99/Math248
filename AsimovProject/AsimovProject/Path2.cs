@@ -77,7 +77,7 @@ namespace AsimovProject {
             ////
             ////// for AAB 
             // INSERT KIM K (VP) DED
-            temp.Add("RoboHap");
+            temp.Add("RoboBlush");
             AAB = new EventNode("space2", temp, 1, "Congrats!\nCompleted your mission without\n breaking any laws!");
             temp.Clear();
 
