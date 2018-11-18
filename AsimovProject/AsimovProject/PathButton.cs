@@ -12,7 +12,7 @@ namespace AsimovProject
 {
     //Class that takes a button num and sets corresponding button in array to this button.
     //Done besides loading
-    class PathButton
+    public class PathButton
     {
         private static Texture2D[] buttons;
         private Rectangle rect;
@@ -54,7 +54,7 @@ namespace AsimovProject
         }
         public void Draw()
         {
-            GameServices.spriteBatch.Draw(thisButton, position, (colored ? Color.OrangeRed : Color.White));
+            GameServices.spriteBatch.Draw(thisButton, position, (colored ? Color.CornflowerBlue: Color.White));
         }
         public Vector2 getPosition()
         {

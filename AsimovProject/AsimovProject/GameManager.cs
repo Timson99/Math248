@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
 
 namespace AsimovProject
 {
@@ -22,6 +23,9 @@ namespace AsimovProject
         private StillSprite currentBackground;
         private SpriteFont gameFont;
         private string currentText = "";
+
+        //Song Asset
+        private Song happySong;
 
         //Event Handling 
         EventNode mainMenu;
@@ -39,11 +43,11 @@ namespace AsimovProject
         {
             List<string> temp = new List<string>();
             temp.Add("RoboHap");
-            mainMenu = new EventNode("field", temp, 1, "This is the main menu");
+            mainMenu = new EventNode("sky", temp, 1, "MY ROBOTIC ADVENTURES");
             temp.Clear();
             temp.Add("Vp");
             temp.Add("Quirk2");
-            characterSelect = new EventNode("space2", temp, 2, "Choose Your Target!\nA: Captain Quirk\nBVice President \nof the United Federations");
+            characterSelect = new EventNode("sky", temp, 2, "Choose Your Target!\n A: Captain Quirk\n B:Vice President \nof the United Federations");
 
             mainMenu.setPath(0, characterSelect);
             characterSelect.setPath(0, path1.getEntryNode());
@@ -58,6 +62,12 @@ namespace AsimovProject
             //Load Font(s)
             gameFont = GameServices.Content.Load<SpriteFont>("Assets/Fonts/gameFont");
 
+            //this.happySong = GameServices.Content.Load<Song>("Assets/Music/happySong");
+            //MediaPlayer.Play(happySong);
+            //MediaPlayer.IsRepeating = true;
+            //MediaPlayer.MediaStateChanged != MediaPlayer_MediaStateChanged;
+
+
             //Load All Backgrounds into "backgrounds" Dictionary as StillSprites
             backgrounds["sky"]  = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sky"), new Vector2(0,0));
             //backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
@@ -68,24 +78,27 @@ namespace AsimovProject
             backgrounds["sunny"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sunny"), new Vector2(0, 0));
             backgrounds["dino"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
             backgrounds["mountain"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/mountain"), new Vector2(0, 0));
+            backgrounds["win"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/win"), new Vector2(0, 0));
 
 
             //Load All Sprites into "sprites" Dictionary as StillSprites
             sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(Game1.gameWidth-400, 0));
             sprites["VpCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kimSad"), new Vector2(Game1.gameWidth - 400, 0));
-            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(Game1.gameWidth - 330, 0));
-            sprites["PresCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentCry"), new Vector2(Game1.gameWidth - 330, 0));
-            sprites["PresBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentBlood"), new Vector2(Game1.gameWidth - 330, 0));
-            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(Game1.gameWidth - 400 ,0));
+            sprites["PresCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentCry"), new Vector2(Game1.gameWidth - 400, 0));
+            sprites["PresBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentBlood"), new Vector2(Game1.gameWidth - 400, 0));
+            sprites["Quirk"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(Game1.gameWidth - 390, 0));
             sprites["Quirk2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kirk"), new Vector2(0, 0));
             sprites["RoboHap"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/happyRobot"), new Vector2(-25, 0));
             sprites["RoboMad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/angryRobot"), new Vector2(-25, 0));
             sprites["RoboSad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadRobot"), new Vector2(-25, 0));
             sprites["RoboBloodySad"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/sadBloodyRobot"), new Vector2(-25, 0));
             sprites["RoboBlush"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/veryHappyRobot"), new Vector2(-25, 0));
-            sprites["QuirkVomit"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QuirkThrowUp"), new Vector2(Game1.gameWidth - 330, 0));
-            sprites["QuirkCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/CryQuirk"), new Vector2(Game1.gameWidth - 330, 0));
-            sprites["QuirkDead"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/DeadQuirk"), new Vector2(Game1.gameWidth - 330, 0));
+            sprites["QuirkVomit"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QuirkThrowUp"), new Vector2(Game1.gameWidth - 390, 0));
+            sprites["QuirkCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/CryQuirk"), new Vector2(Game1.gameWidth - 390, 0));
+            sprites["QuirkDead"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/DeadQuirk"), new Vector2(Game1.gameWidth - 390, 0));
+            sprites["QuirkDeadNoBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QurikDeadNoBlood"), new Vector2(Game1.gameWidth - 390, 0));
+            //sprites["backer"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/ButtonBacker"), new Vector2(0, 400));
 
 
 
@@ -179,12 +192,14 @@ namespace AsimovProject
             for(int i = 0; i < onscreen.Count; i++)
                 onscreen[i].Draw();
 
+            //sprites["backer"].color = Color.DarkRed;
+            //sprites["backer"].Draw();
             //Iterate through button list and call PathButton.Draw() for each instance
             for (int i = 0; i < buttons.Count; i++)
                 buttons[i].Draw();
 
             //Draw Font
-            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(350,50), Color.White);
+            GameServices.spriteBatch.DrawString(gameFont, currentText, new Vector2(340,50), Color.White);
         }
     }
 }

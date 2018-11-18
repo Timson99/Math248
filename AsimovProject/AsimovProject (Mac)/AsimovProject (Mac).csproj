@@ -6,18 +6,18 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5EAEB39C-A476-4D87-9982-943230BC8440}</ProjectGuid>
+    <ProjectGuid>{FABE251E-1308-451B-8E76-A553391F0D7E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsimovProject</RootNamespace>
-    <AssemblyName>AsimovProject</AssemblyName>
+    <RootNamespace>AsimovProject__Mac_</RootNamespace>
+    <AssemblyName>AsimovProject %28Mac%29</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Game Stuff\ReleaseTesting\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,13 +60,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <ManifestCertificateThumbprint>46021900CAD73EB4971B4AA4786218324029FFEF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6896BC71D43C3030AB3F609B35F39A33CB936A76</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>AsimovProject_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AsimovProject %28Mac%29_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -75,47 +72,12 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AnimatedSprite.cs" />
-    <Compile Include="EventNode.cs" />
-    <Compile Include="GameManager.cs" />
-    <Compile Include="GameServices.cs" />
-    <Compile Include="Path1.cs" />
-    <Compile Include="Path2.cs" />
-    <Compile Include="PathButton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StillSprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework, Version=3.7.0.1708, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.7.0.1708\lib\net45\MonoGame.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Direct2D1, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.Direct2D1.4.0.1\lib\net45\SharpDX.Direct2D1.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Direct3D11, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.Direct3D11.4.0.1\lib\net45\SharpDX.Direct3D11.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Direct3D9, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.Direct3D9.4.0.1\lib\net45\SharpDX.Direct3D9.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.DXGI, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.DXGI.4.0.1\lib\net45\SharpDX.DXGI.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Mathematics, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.Mathematics.4.0.1\lib\net45\SharpDX.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.MediaFoundation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.MediaFoundation.4.0.1\lib\net45\SharpDX.MediaFoundation.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.XAudio2, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.XAudio2.4.0.1\lib\net45\SharpDX.XAudio2.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.XInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpDX.XInput.4.0.1\lib\net45\SharpDX.XInput.dll</HintPath>
+      <HintPath>..\packages\MonoGame.Framework.MacOS.3.7.0.1708\lib\net45\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -125,7 +87,6 @@
     <EmbeddedResource Include="Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\SDL2.dll">
       <Link>x86\SDL2.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -170,46 +131,18 @@
       <Link>MonoGame.Framework.dll.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="app.manifest" />
-    <None Include="AsimovProject_TemporaryKey.pfx" />
-    <None Include="Content\Assets\Fonts\gameFont.spritefont">
-      <SubType>Designer</SubType>
+    <None Include="..\AsimovProject\Content\Content.mgcb">
+      <Link>Content\Content.mgcb</Link>
     </None>
+    <None Include="app.manifest" />
+    <None Include="AsimovProject %28Mac%29_TemporaryKey.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Assets\Backgrounds\field.jpg" />
-    <Content Include="Content\Assets\Backgrounds\fieldRed.jpg" />
-    <Content Include="Content\Assets\Backgrounds\glowyGrass.jpg" />
-    <Content Include="Content\Assets\Backgrounds\mountain.png" />
-    <Content Include="Content\Assets\Backgrounds\sky.png" />
-    <Content Include="Content\Assets\Backgrounds\space2.jpg" />
-    <Content Include="Content\Assets\Backgrounds\sunny.png" />
-    <Content Include="Content\Assets\Backgrounds\wierd.png" />
-    <Content Include="Content\Assets\Backgrounds\win.jpg" />
-    <Content Include="Content\Assets\Buttons\buttA.png" />
-    <Content Include="Content\Assets\Buttons\buttB.png" />
-    <Content Include="Content\Assets\Buttons\ButtC.png" />
-    <Content Include="Content\Assets\Buttons\buttRestart.png" />
-    <Content Include="Content\Assets\Buttons\buttStart.png" />
-    <Content Include="Content\Assets\Buttons\xButt.png" />
-    <Content Include="Content\Assets\Music\HappySong.mp3" />
-    <Content Include="Content\Assets\Sprites\angryRobot.png" />
-    <Content Include="Content\Assets\Sprites\ButtonBacker.png" />
-    <Content Include="Content\Assets\Sprites\CryQuirk.png" />
-    <Content Include="Content\Assets\Sprites\DeadQuirk.png" />
-    <Content Include="Content\Assets\Sprites\happyRobot.png" />
-    <Content Include="Content\Assets\Sprites\kim.png" />
-    <Content Include="Content\Assets\Sprites\kimSad.png" />
-    <Content Include="Content\Assets\Sprites\kirk.png" />
-    <Content Include="Content\Assets\Sprites\president.png" />
-    <Content Include="Content\Assets\Sprites\presidentBlood.png" />
-    <Content Include="Content\Assets\Sprites\presidentCry.png" />
-    <Content Include="Content\Assets\Sprites\QuirkThrowUp.png" />
-    <Content Include="Content\Assets\Sprites\QurikDeadNoBlood.png" />
-    <Content Include="Content\Assets\Sprites\sadBloodyRobot.png" />
-    <Content Include="Content\Assets\Sprites\sadRobot.png" />
-    <Content Include="Content\Assets\Sprites\veryHappyRobot.png" />
+    <ProjectReference Include="..\AsimovProject\AsimovProject.csproj">
+      <Project>{5eaeb39c-a476-4d87-9982-943230bc8440}</Project>
+      <Name>AsimovProject</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -221,12 +154,12 @@
   <Import Project="..\Game.Shared\Game.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
-  <Import Project="..\packages\MonoGame.Framework.WindowsDX.3.7.0.1708\build\MonoGame.Framework.WindowsDX.targets" Condition="Exists('..\packages\MonoGame.Framework.WindowsDX.3.7.0.1708\build\MonoGame.Framework.WindowsDX.targets')" />
+  <Import Project="..\packages\MonoGame.Framework.MacOS.3.7.0.1708\build\MonoGame.Framework.MacOS.targets" Condition="Exists('..\packages\MonoGame.Framework.MacOS.3.7.0.1708\build\MonoGame.Framework.MacOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MonoGame.Framework.WindowsDX.3.7.0.1708\build\MonoGame.Framework.WindowsDX.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MonoGame.Framework.WindowsDX.3.7.0.1708\build\MonoGame.Framework.WindowsDX.targets'))" />
+    <Error Condition="!Exists('..\packages\MonoGame.Framework.MacOS.3.7.0.1708\build\MonoGame.Framework.MacOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MonoGame.Framework.MacOS.3.7.0.1708\build\MonoGame.Framework.MacOS.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

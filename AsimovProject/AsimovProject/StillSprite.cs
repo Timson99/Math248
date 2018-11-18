@@ -18,6 +18,7 @@ namespace AsimovProject
     {
         private Texture2D sprite;
         private Vector2 position;
+        public Color color = Color.White;
 
         public StillSprite(Texture2D sprite, Vector2 position)
         {
@@ -26,7 +27,7 @@ namespace AsimovProject
         }
         public void Draw()
         {
-            GameServices.spriteBatch.Draw(sprite, position, Color.White);
+            GameServices.spriteBatch.Draw(sprite, position, color);
         }
     }
 }

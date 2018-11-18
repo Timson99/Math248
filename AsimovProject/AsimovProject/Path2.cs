@@ -37,48 +37,52 @@ namespace AsimovProject {
             ////////////// for A 
             temp.Add("RoboMad");
             temp.Add("Pres");
-            A = new EventNode("space2", temp, 3, "How would you like to kill?\n A: Posion Presidents Tea \n B: Break Arm \n C: Phasers on Stun");
+            A = new EventNode("space2", temp, 3, "How would you like to kill?\n A: Poison President's Tea \n B: Break Arm \n C: Phasers on Stun");
             temp.Clear();
             
             /////////////
             ////// for B 
-            temp.Add("RoboSad");            
-            B = new EventNode("space2", temp, 1, "   GAME OVER! \nYou broke the second law \nHint:\nBy definition, killing is not \nincluded in the first law");
+            temp.Add("RoboSad");
+            temp.Add("Pres");
+            B = new EventNode("fieldRed", temp, 1, "            GAME OVER! \nYou broke the second law \n                Hint:\nBy definition, killing is not \nincluded in the first law");
             temp.Clear();
 
             //////
             ////// for AA
             temp.Add("Vp");
             temp.Add("RoboHap");                        
-            AA = new EventNode("space2", temp, 2, "New President:\" Good job you have\n completed your mission!! \n A: Leave \n B: Serve \" new \" president the deadly tea");
+            AA = new EventNode("space2", temp, 2, "New President:\" Good job!\"\nYou have completed the mission!\n A: Leave \n B: Serve \" new \" president \n the deadly tea");
             temp.Clear();
 
             //////
             ////// for AB 
             //INSERT PRES BROKEN ARM
-            temp.Add("RoboSad");
-            AB = new EventNode("space2", temp, 1, "   GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes fractures");
+            temp.Add("RoboBloodySad");
+            temp.Add("PresCry");
+            AB = new EventNode("fieldRed", temp, 1, "            GAME OVER! \n                Hint:\nYou broke the first law by\ndefinition of Harm or \nInjure, which includes \nfractures");
             temp.Clear();
 
             //////
             ////// for AC 
             // INSERT PRES BLEED
             temp.Add("RoboSad");
-            AC = new EventNode("fieldRed", temp, 1, "   GAME OVER! \nHint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes bleeding");
+            temp.Add("PresBlood");
+            AC = new EventNode("fieldRed", temp, 1, "            GAME OVER! \n                Hint:\nYou broke the first law by\ndefinition of Harm or \nInjure, which includes bleeding");
             temp.Clear();
 
             //////
             ////// for AAA
             temp.Add("RoboSad");
             temp.Add("Vp");
-            AAA = new EventNode("space2", temp, 1, "tGAME OVER!\nHint:\nYou broke the second law,\nthe president is still alive");
+            AAA = new EventNode("fieldRed", temp, 1, "        GAME OVER!\n                Hint:\nYou broke the second law,\nthe president is still alive");
             temp.Clear();
 
             ////
             ////// for AAB 
             // INSERT KIM K (VP) DED
             temp.Add("RoboBlush");
-            AAB = new EventNode("fieldRed", temp, 1, "Congrats!\nCompleted your mission without\n breaking any laws!");
+            temp.Add("VpCry");
+            AAB = new EventNode("win", temp, 1, "Congrats!\nCompleted your mission\nwithout breaking any laws!");
             temp.Clear();
 
             //////

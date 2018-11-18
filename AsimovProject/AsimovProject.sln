@@ -5,7 +5,16 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsimovProject", "AsimovProject\AsimovProject.csproj", "{5EAEB39C-A476-4D87-9982-943230BC8440}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Game.Shared", "Game.Shared\Game.Shared.shproj", "{4B545303-7EB2-4582-BF33-FB065BE4ED06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsimovProject (Mac)", "AsimovProject (Mac)\AsimovProject (Mac).csproj", "{FABE251E-1308-451B-8E76-A553391F0D7E}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Game.Shared\Game.Shared.projitems*{4b545303-7eb2-4582-bf33-fb065be4ed06}*SharedItemsImports = 13
+		Game.Shared\Game.Shared.projitems*{5eaeb39c-a476-4d87-9982-943230bc8440}*SharedItemsImports = 4
+		Game.Shared\Game.Shared.projitems*{fabe251e-1308-451b-8e76-a553391f0d7e}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +24,10 @@ Global
 		{5EAEB39C-A476-4D87-9982-943230BC8440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAEB39C-A476-4D87-9982-943230BC8440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAEB39C-A476-4D87-9982-943230BC8440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABE251E-1308-451B-8E76-A553391F0D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABE251E-1308-451B-8E76-A553391F0D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABE251E-1308-451B-8E76-A553391F0D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABE251E-1308-451B-8E76-A553391F0D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

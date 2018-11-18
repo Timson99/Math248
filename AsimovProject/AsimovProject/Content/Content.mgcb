@@ -109,6 +109,18 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Backgrounds/wierd.png
 
+#begin Assets/Backgrounds/win.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Backgrounds/win.jpg
+
 #begin Assets/Buttons/buttA.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -188,6 +200,12 @@
 /processorParam:TextureFormat=Compressed
 /build:Assets/Fonts/gameFont.spritefont
 
+#begin Assets/Music/HappySong.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Assets/Music/HappySong.mp3
+
 #begin Assets/Sprites/angryRobot.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -199,6 +217,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Sprites/angryRobot.png
+
+#begin Assets/Sprites/ButtonBacker.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Sprites/ButtonBacker.png
 
 #begin Assets/Sprites/CryQuirk.png
 /importer:TextureImporter
@@ -331,6 +361,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Sprites/QuirkThrowUp.png
+
+#begin Assets/Sprites/QurikDeadNoBlood.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Sprites/QurikDeadNoBlood.png
 
 #begin Assets/Sprites/sadBloodyRobot.png
 /importer:TextureImporter
