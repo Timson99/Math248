@@ -26,6 +26,8 @@ namespace AsimovProject
 
         //Song Asset
         private Song happySong;
+        private Song sadSong;
+        bool wasSad = false;
 
         //Event Handling 
         EventNode mainMenu;
@@ -64,9 +66,10 @@ namespace AsimovProject
             gameFont = GameServices.Content.Load<SpriteFont>("Assets/Fonts/gameFont");
 
             happySong = GameServices.Content.Load<Song>("Assets/Music/HappySong");
+            sadSong = GameServices.Content.Load<Song>("Assets/Music/SadSong");
             MediaPlayer.Play(happySong);
             MediaPlayer.IsRepeating = true;
-            //MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
+            
 
            
 
@@ -172,6 +175,27 @@ namespace AsimovProject
 
             if (currentNode == null) //If null, assumes game is over and starts from the beginning
                 currentNode = mainMenu;
+
+
+            if(currentNode.getBackgroundKey() == "fieldRed" && wasSad == false)
+            {
+                wasSad = true;
+                TimeSpan temp = MediaPlayer.PlayPosition;
+                double mSeconds = temp.Milliseconds + temp.Seconds * 1000 + temp.Minutes * 60000;
+                mSeconds *= (1.0d/0.212209302d);
+                temp = new TimeSpan(0, 0,(int)(mSeconds/60000), (int)(mSeconds / 1000), (int)(mSeconds % 1000));
+                MediaPlayer.Play(sadSong, temp);
+
+            }
+            if(wasSad == true && currentNode.getBackgroundKey() != "fieldRed")
+            {
+                wasSad = false;
+                TimeSpan temp = MediaPlayer.PlayPosition;
+                double mSeconds = temp.Milliseconds + temp.Seconds * 1000 + temp.Minutes * 60000;
+                mSeconds *= 0.212209302d;
+                temp = new TimeSpan(0, 0, (int)(mSeconds / 60000), (int)(mSeconds / 1000), (int)(mSeconds % 1000));
+                MediaPlayer.Play(happySong, temp);
+            }
 
 
             currentBackground = backgrounds[currentNode.getBackgroundKey()]; 

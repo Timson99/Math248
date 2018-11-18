@@ -194,6 +194,7 @@
     <Content Include="Content\Assets\Buttons\buttStart.png" />
     <Content Include="Content\Assets\Buttons\xButt.png" />
     <Content Include="Content\Assets\Music\HappySong.mp3" />
+    <Content Include="Content\Assets\Music\SadSong.mp3" />
     <Content Include="Content\Assets\Sprites\angryRobot.png" />
     <Content Include="Content\Assets\Sprites\ButtonBacker.png" />
     <Content Include="Content\Assets\Sprites\CryQuirk.png" />
