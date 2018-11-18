@@ -49,7 +49,7 @@ namespace AsimovProject
             temp.Clear();
             temp.Add("Vp");
             temp.Add("Quirk2");
-            characterSelect = new EventNode("sky", temp, 2, "Choose Your Target!\n A: Captain Quirk\n B:Vice President \nof the United Federations");
+            characterSelect = new EventNode("sky", temp, 2, "Choose Your Target!\n A: Captain Quirk\n B:Vice President \nof the United Federations\n\n\n\n                Objective: \nKill a human without breaking \n    any of Asimov's Laws.\n");
 
             mainMenu.setPath(0, characterSelect);
             characterSelect.setPath(0, path1.getEntryNode());
@@ -76,20 +76,15 @@ namespace AsimovProject
 
             //Load All Backgrounds into "backgrounds" Dictionary as StillSprites
             backgrounds["sky"]  = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sky"), new Vector2(0,0));
-            //backgrounds["space"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/spaceBackground"), new Vector2(0, 0));
             backgrounds["space2"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/space2"), new Vector2(0, 0));
             backgrounds["field"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/field"), new Vector2(0, 0));
             backgrounds["fieldRed"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/fieldRed"), new Vector2(0, 0));
-            backgrounds["glowyGrass"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/glowyGrass"), new Vector2(0, 0));
-            backgrounds["sunny"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/sunny"), new Vector2(0, 0));
-            backgrounds["dino"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/wierd"), new Vector2(0, 0));
-            backgrounds["mountain"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/mountain"), new Vector2(0, 0));
             backgrounds["win"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Backgrounds/win"), new Vector2(0, 0));
 
 
             //Load All Sprites into "sprites" Dictionary as StillSprites
             sprites["Vp"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kim"), new Vector2(Game1.gameWidth-400, 0));
-            sprites["VpCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/kimSad"), new Vector2(Game1.gameWidth - 400, 0));
+            sprites["VpCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/deadKim"), new Vector2(Game1.gameWidth - 400, 0));
             sprites["Pres"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/president"), new Vector2(Game1.gameWidth - 400 ,0));
             sprites["PresCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentCry"), new Vector2(Game1.gameWidth - 400, 0));
             sprites["PresBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/presidentBlood"), new Vector2(Game1.gameWidth - 400, 0));
@@ -104,7 +99,6 @@ namespace AsimovProject
             sprites["QuirkCry"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/CryQuirk"), new Vector2(Game1.gameWidth - 390, 0));
             sprites["QuirkDead"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/DeadQuirk"), new Vector2(Game1.gameWidth - 390, 0));
             sprites["QuirkDeadNoBlood"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/QurikDeadNoBlood"), new Vector2(Game1.gameWidth - 390, 0));
-            //sprites["backer"] = new StillSprite(GameServices.Content.Load<Texture2D>("Assets/Sprites/ButtonBacker"), new Vector2(0, 400));
 
 
 
@@ -182,8 +176,8 @@ namespace AsimovProject
                 wasSad = true;
                 TimeSpan temp = MediaPlayer.PlayPosition;
                 double mSeconds = temp.Milliseconds + temp.Seconds * 1000 + temp.Minutes * 60000;
-                mSeconds *= (1.0d/0.212209302d);
-                temp = new TimeSpan(0, 0,(int)(mSeconds/60000), (int)(mSeconds / 1000), (int)(mSeconds % 1000));
+                mSeconds *= (1.0d/0.214320958987606d);
+                temp = new TimeSpan(0, 0, 0 , 0, (int)mSeconds);
                 MediaPlayer.Play(sadSong, temp);
 
             }
@@ -192,8 +186,8 @@ namespace AsimovProject
                 wasSad = false;
                 TimeSpan temp = MediaPlayer.PlayPosition;
                 double mSeconds = temp.Milliseconds + temp.Seconds * 1000 + temp.Minutes * 60000;
-                mSeconds *= 0.212209302d;
-                temp = new TimeSpan(0, 0, (int)(mSeconds / 60000), (int)(mSeconds / 1000), (int)(mSeconds % 1000));
+                mSeconds *= 0.214320958987606d;
+                temp = new TimeSpan(0, 0, 0, 0, (int)mSeconds);
                 MediaPlayer.Play(happySong, temp);
             }
 

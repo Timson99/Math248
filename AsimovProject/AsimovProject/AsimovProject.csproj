@@ -180,12 +180,8 @@
   <ItemGroup>
     <Content Include="Content\Assets\Backgrounds\field.jpg" />
     <Content Include="Content\Assets\Backgrounds\fieldRed.jpg" />
-    <Content Include="Content\Assets\Backgrounds\glowyGrass.jpg" />
-    <Content Include="Content\Assets\Backgrounds\mountain.png" />
     <Content Include="Content\Assets\Backgrounds\sky.png" />
     <Content Include="Content\Assets\Backgrounds\space2.jpg" />
-    <Content Include="Content\Assets\Backgrounds\sunny.png" />
-    <Content Include="Content\Assets\Backgrounds\wierd.png" />
     <Content Include="Content\Assets\Backgrounds\win.jpg" />
     <Content Include="Content\Assets\Buttons\buttA.png" />
     <Content Include="Content\Assets\Buttons\buttB.png" />
@@ -198,10 +194,10 @@
     <Content Include="Content\Assets\Sprites\angryRobot.png" />
     <Content Include="Content\Assets\Sprites\ButtonBacker.png" />
     <Content Include="Content\Assets\Sprites\CryQuirk.png" />
+    <Content Include="Content\Assets\Sprites\deadKim.png" />
     <Content Include="Content\Assets\Sprites\DeadQuirk.png" />
     <Content Include="Content\Assets\Sprites\happyRobot.png" />
     <Content Include="Content\Assets\Sprites\kim.png" />
-    <Content Include="Content\Assets\Sprites\kimSad.png" />
     <Content Include="Content\Assets\Sprites\kirk.png" />
     <Content Include="Content\Assets\Sprites\president.png" />
     <Content Include="Content\Assets\Sprites\presidentBlood.png" />

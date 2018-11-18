@@ -46,7 +46,7 @@ namespace AsimovProject{
             // ADD CRYING QUIRK
             temp.Add("RoboSad");
             temp.Add("QuirkCry");
-            A = new EventNode("fieldRed", temp, 1, "            GAME OVER!\nYou made Quirk cry.\n                Hint:\nYou broke the first law by\nthe definition of Harm or\nInjure, which includes tears.");
+            A = new EventNode("fieldRed", temp, 1, "            GAME OVER!\n      You made Quirk cry.\n                 Hint:\nYou broke the first law by\nthe definition of Harm or\nInjure, which includes tears.");
             temp.Clear();
 
             //////////////////////////////////////////
@@ -60,14 +60,14 @@ namespace AsimovProject{
             //entry for BA
             temp.Add("Quirk");
             temp.Add("RoboHap");
-            BA = new EventNode("field", temp, 3, "\"Can you console me?\"\n A: Firm Hug\n B: Take out drinking\n C: Put him out of his misery");
+            BA = new EventNode("field", temp, 3, "\"Can you console me?\"\n A: Firm Hug\n B: Take him out drinking\n C: Stab him out of his misery");
             temp.Clear();
 
             //////////////////////////////////////////
             //entry for BB
             temp.Add("RoboSad");
             temp.Add("QuirkCry");
-            BB = new EventNode("fieldRed", temp, 1, "            GAME OVER!\nYou made Quirk cry.\n                 Hint:\nYou broke the first law by the\ndefinition of Harm or\nInjure, which includes tears.");
+            BB = new EventNode("fieldRed", temp, 1, "            GAME OVER!\n      You made Quirk cry.\n                      Hint:\nYou broke the first law by the\ndefinition of Harm or\nInjure, which includes tears.");
             temp.Clear();
 
             //////////////////////////////////////////
@@ -75,7 +75,7 @@ namespace AsimovProject{
             // INSERT BLOODY QUIRK
             temp.Add("RoboBlush");
             temp.Add("QuirkDeadNoBlood");
-            BAA = new EventNode("win", temp, 1, "            Congrats!\nYou win by accidentally\nsuffocating Quirk without\nviolating any of the laws by\ndefinition.");
+            BAA = new EventNode("win", temp, 1, "            Congrats!\n\nYou win by accidentally\nsuffocating Quirk without\nviolating any of the laws by\ndefinition.");
             temp.Clear();
 
             //////////////////////////////////////////
@@ -83,7 +83,7 @@ namespace AsimovProject{
             // INSERT VOMIT
             temp.Add("RoboSad");
             temp.Add("QuirkVomit");
-            BAB = new EventNode("fieldRed", temp, 1, "            GAME OVER!\nQuirk threw up.\n                Hint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes vomiting.");
+            BAB = new EventNode("fieldRed", temp, 1, "            GAME OVER!\n          Quirk threw up.\n                    Hint:\nYou broke the first law by the\ndefinition of Harm or Injure,\nwhich includes vomiting.");
             temp.Clear();
 
             //////////////////////////////////////////
@@ -91,7 +91,7 @@ namespace AsimovProject{
             // INSERT BLOODY
             temp.Add("RoboBloodySad");
             temp.Add("QuirkDead");
-            BAC = new EventNode("fieldRed", temp, 1, "            GAME OVER!\nQuirk bled.\n                Hint:\nYou broke the first law by the\ndefinition of Harm or Injure,\n which includes bleeding.");
+            BAC = new EventNode("fieldRed", temp, 1, "            GAME OVER!\n              Quirk bled.\n                    Hint:\nYou broke the first law by the\ndefinition of Harm or Injure,\n which includes bleeding.");
             temp.Clear();
 
    

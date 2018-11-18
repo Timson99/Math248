@@ -44,7 +44,7 @@ namespace AsimovProject {
             ////// for B 
             temp.Add("RoboSad");
             temp.Add("Pres");
-            B = new EventNode("fieldRed", temp, 1, "            GAME OVER! \nYou broke the second law \n                Hint:\nBy definition, killing is not \nincluded in the first law");
+            B = new EventNode("fieldRed", temp, 1, "            GAME OVER! \nYou broke the second law \nHint: You ignored an order \nfrom a human.\nBy definition, killing is not \nincluded in the first law");
             temp.Clear();
 
             //////
@@ -67,7 +67,7 @@ namespace AsimovProject {
             // INSERT PRES BLEED
             temp.Add("RoboSad");
             temp.Add("PresBlood");
-            AC = new EventNode("fieldRed", temp, 1, "            GAME OVER! \n                Hint:\nYou broke the first law by\ndefinition of Harm or \nInjure, which includes bleeding");
+            AC = new EventNode("fieldRed", temp, 1, "            GAME OVER! \nThe stunned President fell \noff a cliff\nHint: You broke the first law \nby definition Injure,\n which includes bleeding");
             temp.Clear();
 
             //////
@@ -82,7 +82,7 @@ namespace AsimovProject {
             // INSERT KIM K (VP) DED
             temp.Add("RoboBlush");
             temp.Add("VpCry");
-            AAB = new EventNode("win", temp, 1, "Congrats!\nCompleted your mission\nwithout breaking any laws!");
+            AAB = new EventNode("win", temp, 1, "               Congrats!\n\nCompleted your mission\nwithout breaking any laws!");
             temp.Clear();
 
             //////
