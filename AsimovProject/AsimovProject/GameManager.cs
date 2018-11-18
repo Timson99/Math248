@@ -55,6 +55,7 @@ namespace AsimovProject
             currentNode = mainMenu;
 
         }
+       
         public void Load()
         {
             ///Loading///
@@ -62,10 +63,12 @@ namespace AsimovProject
             //Load Font(s)
             gameFont = GameServices.Content.Load<SpriteFont>("Assets/Fonts/gameFont");
 
-            //this.happySong = GameServices.Content.Load<Song>("Assets/Music/happySong");
-            //MediaPlayer.Play(happySong);
-            //MediaPlayer.IsRepeating = true;
-            //MediaPlayer.MediaStateChanged != MediaPlayer_MediaStateChanged;
+            happySong = GameServices.Content.Load<Song>("Assets/Music/HappySong");
+            MediaPlayer.Play(happySong);
+            MediaPlayer.IsRepeating = true;
+            //MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
+
+           
 
 
             //Load All Backgrounds into "backgrounds" Dictionary as StillSprites
